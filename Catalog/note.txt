@@ -1,0 +1,7 @@
+docker run -d --rm --name mongo -p 27017:27017 -v mongodbdata:/data/db -e MONGO_INITDB_ROOT_USERNAME=mogoadmin -e MONGO_INITDB_ROOT_PASSWORD=123456?A mongo
+
+dotnet user-secrets init
+
+dotnet user-secrets set MongoDbSettings:Password 123456?A
+
+dotnet add package AspNetCore.HealthChecks.MongoDb
